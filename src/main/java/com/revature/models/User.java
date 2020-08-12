@@ -1,5 +1,6 @@
 package com.revature.models;
 
+
 public class User {
 	
 
@@ -76,8 +77,14 @@ public class User {
 	
 	public void accessInfo(User user) {
 		System.out.println("User "+ this.getId() +" personal info:  \nname: " +
-				this.getName() + " \nAdress: " + this.getAddress() + " \nPhone Number: "+ 
+				this.getName() + " \nAddress: " + this.getAddress() + " \nPhone Number: "+ 
 				this.getPhone());
+	}
+
+	
+	@Override
+	public String toString() {
+		return "Name: " + name +", Address: "+ address;
 	}
 
 	

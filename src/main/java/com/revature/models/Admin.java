@@ -27,15 +27,5 @@ public class Admin extends Employee{
 		super(id, type, name, address);
 	}
 
-	public void transferBalance(double amount, Account accountTo, Account accountFrom) {
-		double ogAccountBalance = accountTo.getBalance();
-		double newAccountBalance = ogAccountBalance+amount;
-		accountTo.setBalance(newAccountBalance);
-		
-		double ogAccountBalance2= accountFrom.getBalance();
-		double newAccountBalance2= ogAccountBalance2-amount;	
-		accountFrom.setBalance(newAccountBalance2);
-		
-	}
 
 }

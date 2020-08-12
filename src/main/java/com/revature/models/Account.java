@@ -1,5 +1,6 @@
 package com.revature.models;
 
+
 public class Account {
 
 	/*
@@ -12,12 +13,12 @@ public class Account {
 	public double balance;
 	
 	//foreign key to User table
-	public int userID;
+	public String userID;
 	
 	//to keep track of accounts created;
 	public int accountCount;
 	
-	public User customer;
+	public User user;
 	//to create new account 
 	public Account() {
 		super();
@@ -26,21 +27,21 @@ public class Account {
 		//new account will start with 0 balance
 		balance=0;
 	}
-
-	public Account(User customer, int accountNumber, double balance, int userID) {
+//want accountNumber to be a random unique number
+	public Account(User user, int accountNumber, double balance, String userID) {
 		super();
-		this.customer= customer;
+		this.user= user;
 		this.accountNumber = accountNumber;
 		this.balance = balance;
 		this.userID = userID;
 	}
 
-	public User getCustomer() {
-		return customer;
+	public User getUser() {
+		return user;
 	}
 
-	public void setCustomer(User customer) {
-		this.customer = customer;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	/*
@@ -82,25 +83,13 @@ public class Account {
 	}
 	
 	//do not want to set userId that is limited to User class
-	public int getUserID() {
+	public String getUserID() {
 		return userID;
 	}
 
-	
-	public void deposit(double amount) {
-		balance+=amount;
-			
+	@Override
+	public String toString() {
+		return "Account[Account Number: " + accountNumber +"\nBalance: "+ balance + "\nUser info: "+ user +"\nUserID: "+ userID +"]";
 	}
-	
-	public void withdrawal(double amount) {
-				
-		if(amount>=balance) {
-			balance =0;
-			//want to set error message not allowed to withdraw more than balance
-		}
-		else
-			balance-=amount;
-	}
-	
-	
+
 }
