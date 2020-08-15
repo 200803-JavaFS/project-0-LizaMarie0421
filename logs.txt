@@ -1,0 +1,70 @@
+2020-08-12 20:57:36 INFO  Driver:15 - The application has started
+2020-08-12 22:40:38 INFO  Driver:15 - The application has started
+2020-08-12 22:41:07 INFO  Driver:15 - The application has started
+2020-08-12 22:46:17 INFO  Driver:15 - The application has started
+2020-08-12 22:47:03 INFO  Driver:15 - The application has started
+2020-08-14 16:01:43 INFO  Driver:20 - The application has started
+2020-08-14 16:01:59 INFO  Driver:20 - The application has started
+2020-08-14 16:02:25 INFO  Driver:20 - The application has started
+2020-08-14 16:07:16 INFO  Driver:20 - The application has started
+2020-08-14 16:07:44 INFO  Driver:20 - The application has started
+2020-08-14 16:08:10 INFO  Driver:20 - The application has started
+2020-08-14 17:51:28 INFO  Driver:20 - The application has started
+2020-08-14 17:52:00 INFO  Driver:20 - The application has started
+2020-08-14 18:38:21 INFO  Driver:25 - The application has started
+2020-08-14 18:40:27 INFO  Driver:25 - The application has started
+2020-08-14 18:41:56 INFO  Driver:25 - The application has started
+2020-08-14 18:42:19 INFO  Driver:25 - The application has started
+2020-08-14 18:45:34 INFO  Driver:25 - The application has started
+2020-08-14 18:46:37 INFO  Driver:25 - The application has started
+2020-08-14 18:47:28 INFO  Driver:25 - The application has started
+2020-08-14 18:47:56 INFO  Driver:25 - The application has started
+2020-08-14 18:49:17 INFO  Driver:25 - The application has started
+2020-08-14 18:50:38 INFO  Driver:25 - The application has started
+2020-08-14 19:01:05 INFO  Driver:25 - The application has started
+2020-08-14 19:01:36 INFO  Driver:25 - The application has started
+2020-08-14 22:48:05 INFO  Driver:25 - The application has started
+2020-08-14 22:48:49 INFO  Driver:25 - The application has started
+2020-08-14 22:50:34 INFO  Driver:25 - The application has started
+2020-08-14 22:51:08 INFO  Driver:25 - The application has started
+2020-08-14 22:59:24 INFO  Driver:25 - The application has started
+2020-08-14 22:59:51 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-14 23:55:46 INFO  Driver:28 - The application has started
+2020-08-14 23:56:01 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-14 23:56:25 INFO  Driver:28 - The application has started
+2020-08-14 23:56:40 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-14 23:56:47 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-14 23:57:35 INFO  Driver:28 - The application has started
+2020-08-14 23:57:46 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-14 23:58:06 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-14 23:59:46 INFO  Driver:28 - The application has started
+2020-08-14 23:59:54 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 00:00:03 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 00:00:42 INFO  Driver:28 - The application has started
+2020-08-15 00:00:51 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 00:00:54 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 00:01:06 INFO  AccountServices:52 - Updating Account: Account [accountNumber=7, approvalStatus=Pending, balance=5500.45, user=User [id=0, type=Customer, first=Kassie, last=Rodriguez, phone=7087880421, username=kc2009, password=bestie]]
+2020-08-15 00:03:33 INFO  Driver:28 - The application has started
+2020-08-15 00:03:42 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 00:03:48 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 00:03:56 INFO  AccountServices:52 - Updating Account: Account [accountNumber=7, approvalStatus=Pending, balance=5500.889999999999, user=User [id=0, type=Customer, first=Kassie, last=Rodriguez, phone=7087880421, username=kc2009, password=bestie]]
+2020-08-15 09:26:50 INFO  Driver:28 - The application has started
+2020-08-15 09:27:10 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 09:27:14 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 09:27:24 INFO  AccountServices:52 - Updating Account: Account [accountNumber=7, approvalStatus=Pending, balance=5501.11, user=User [id=0, type=Customer, first=Kassie, last=Rodriguez, phone=7087880421, username=kc2009, password=bestie]]
+2020-08-15 09:34:16 INFO  Driver:28 - The application has started
+2020-08-15 09:34:26 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 09:34:31 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 09:35:08 INFO  AccountServices:52 - Updating Account: Account [accountNumber=7, approvalStatus=Pending, balance=5000.0, user=User [id=0, type=Customer, first=Kassie, last=Rodriguez, phone=7087880421, username=kc2009, password=bestie]]
+2020-08-15 09:42:16 INFO  Driver:28 - The application has started
+2020-08-15 09:42:16 INFO  Driver:28 - The application has started
+2020-08-15 09:42:16 INFO  Driver:28 - The application has started
+2020-08-15 09:42:26 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 09:51:33 INFO  Driver:28 - The application has started
+2020-08-15 09:51:33 INFO  Driver:28 - The application has started
+2020-08-15 09:51:45 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 09:52:01 INFO  Driver:28 - The application has started
+2020-08-15 09:52:11 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 09:52:38 INFO  Driver:28 - The application has started
+2020-08-15 09:57:59 INFO  Driver:28 - The application has started
+2020-08-15 09:58:08 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie

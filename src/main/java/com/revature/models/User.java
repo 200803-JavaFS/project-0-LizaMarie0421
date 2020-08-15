@@ -1,91 +1,153 @@
 package com.revature.models;
 
-
 public class User {
-	
 
-	public int id;
-	public String name;
-	public String address;
-	public String phone;
-	
-	public int userCount;
-	
-	
+	private int id;//PKSERIAL
+	private String type;
+	private String first, last;
+	private String phone;
+	private String username;
+	private String password;
 	public User() {
 		super();
-		this.id=++userCount;
 	}
-
-	//allows for customer to register id,name, address and phone number
-	public User(int id, String name, String address, String phone) {
+	//without id and without phone
+	public User(String type, String first, String last, String username, String password) {
 		super();
-		this.id = ++userCount;
-		this.name = name;
-		this.address = address;
+		this.type = type;
+		this.first = first;
+		this.last = last;
+		this.username = username;
+		this.password = password;
+	}
+	//without id
+	public User(String type, String first, String last, String phone, String username, String password) {
+		super();
+		this.type = type;
+		this.first = first;
+		this.last = last;
 		this.phone = phone;
+		this.username = username;
+		this.password = password;
 	}
-
-	//allows for customer to register id,name, address but they have option to 
-	//not include phone number
-	public User(int id, String name, String address) {
+	//with all
+	public User(int id, String type, String first, String last, String phone, String username,
+			String password) {
 		super();
-		this.id = ++userCount;
-		this.name = name;
-		this.address = address;
+		this.id = id;
+		this.type = type;
+		this.first = first;
+		this.last = last;
+		this.phone = phone;
+		this.username = username;
+		this.password = password;
 	}
 	
-	public int getUserCount() {
-		return userCount;
-	}
-
-	public  void setUserCount(int userCount) {
-		this.userCount = userCount;
-	}
 	
 	public int getId() {
 		return id;
 	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
-
-	public String getName() {
-		return name;
+	public String getType() {
+		return type;
 	}
-
-	public void setName(String name) {
-		this.name = name;
+	public void setType(String type) {
+		this.type = type;
 	}
-
-	public String getAddress() {
-		return address;
+	public String getFirst() {
+		return first;
 	}
-
-	public void setAddress(String address) {
-		this.address = address;
+	public void setFirst(String first) {
+		this.first = first;
 	}
-
+	public String getLast() {
+		return last;
+	}
+	public void setLast(String last) {
+		this.last = last;
+	}
 	public String getPhone() {
 		return phone;
 	}
-
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	
-	public void accessInfo(User user) {
-		System.out.println("User "+ this.getId() +" personal info:  \nname: " +
-				this.getName() + " \nAddress: " + this.getAddress() + " \nPhone Number: "+ 
-				this.getPhone());
+	public String getUsername() {
+		return username;
 	}
-
 	
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((first == null) ? 0 : first.hashCode());
+		result = prime * result + id;
+		result = prime * result + ((last == null) ? 0 : last.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
+		result = prime * result + ((phone == null) ? 0 : phone.hashCode());
+		result = prime * result + ((type == null) ? 0 : type.hashCode());
+		result = prime * result + ((username == null) ? 0 : username.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		User other = (User) obj;
+		if (first == null) {
+			if (other.first != null)
+				return false;
+		} else if (!first.equals(other.first))
+			return false;
+		if (id != other.id)
+			return false;
+		if (last == null) {
+			if (other.last != null)
+				return false;
+		} else if (!last.equals(other.last))
+			return false;
+		if (password == null) {
+			if (other.password != null)
+				return false;
+		} else if (!password.equals(other.password))
+			return false;
+		if (phone == null) {
+			if (other.phone != null)
+				return false;
+		} else if (!phone.equals(other.phone))
+			return false;
+		if (type == null) {
+			if (other.type != null)
+				return false;
+		} else if (!type.equals(other.type))
+			return false;
+		if (username == null) {
+			if (other.username != null)
+				return false;
+		} else if (!username.equals(other.username))
+			return false;
+		return true;
+	}
 	@Override
 	public String toString() {
-		return "Name: " + name +", Address: "+ address;
+		return "User [id=" + id + ", type=" + type + ", first=" + first + ", last=" + last
+				+ ", phone=" + phone + ", username=" + username + ", password=" + password + "]";
 	}
-
 	
 }

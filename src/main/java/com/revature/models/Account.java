@@ -3,65 +3,50 @@ package com.revature.models;
 
 public class Account {
 
-	/*
-	 * public static String username;
-	 * public static String password;
-	 */
 	
-	//unique
-	public int accountNumber;
-	public double balance;
+	private int accountNumber;//PK
+	private String approvalStatus;
+	private double balance;
+	private User user; //fk
 	
-	//foreign key to User table
-	public String userID;
 	
-	//to keep track of accounts created;
-	public int accountCount;
-	
-	public User user;
-	//to create new account 
 	public Account() {
 		super();
-		//if 0 accounts created new account will be 1 
-		accountNumber=++accountCount;
-		//new account will start with 0 balance
-		balance=0;
 	}
-//want accountNumber to be a random unique number
-	public Account(User user, int accountNumber, double balance, String userID) {
+
+
+	public Account(String approvalStatus, double balance, User user) {
 		super();
-		this.user= user;
-		this.accountNumber = accountNumber;
+		this.approvalStatus = approvalStatus;
 		this.balance = balance;
-		this.userID = userID;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
 		this.user = user;
 	}
-
-	/*
-	 * public static String getUsername() { return username; }
-	 * 
-	 * public static void setUsername(String username) { Account.username =
-	 * username; }
-	 * 
-	 * public static String getPassword() { return password; }
-	 * 
-	 * public static void setPassword(String password) { Account.password =
-	 * password; }
-	 */
+	public Account(int accountNumber, String approvalStatus, double balance, User user) {
+		super();
+		this.accountNumber = accountNumber;
+		this.approvalStatus = approvalStatus;
+		this.balance = balance;
+		this.user = user;
+	}
+	
 
 	public int getAccountNumber() {
 		return accountNumber;
 	}
 
+
 	public void setAccountNumber(int accountNumber) {
 		this.accountNumber = accountNumber;
+	}
+
+
+	public String getApprovalStatus() {
+		return approvalStatus;
+	}
+
+
+	public void setApprovalStatus(String approvalStatus) {
+		this.approvalStatus = approvalStatus;
 	}
 
 
@@ -69,27 +54,72 @@ public class Account {
 		return balance;
 	}
 
+
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
 
 
-	public int getAccountCount() {
-		return accountCount;
+	public User getUser() {
+		return user;
 	}
 
-	public void setAccountCount(int accountCount) {
-		this.accountCount = accountCount;
+
+	public void setUser(User user) {
+		this.user = user;
 	}
-	
-	//do not want to set userId that is limited to User class
-	public String getUserID() {
-		return userID;
+
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + accountNumber;
+		result = prime * result + ((approvalStatus == null) ? 0 : approvalStatus.hashCode());
+		long temp;
+		temp = Double.doubleToLongBits(balance);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		result = prime * result + ((user == null) ? 0 : user.hashCode());
+		return result;
 	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Account other = (Account) obj;
+		if (accountNumber != other.accountNumber)
+			return false;
+		if (approvalStatus == null) {
+			if (other.approvalStatus != null)
+				return false;
+		} else if (!approvalStatus.equals(other.approvalStatus))
+			return false;
+		if (Double.doubleToLongBits(balance) != Double.doubleToLongBits(other.balance))
+			return false;
+		if (user == null) {
+			if (other.user != null)
+				return false;
+		} else if (!user.equals(other.user))
+			return false;
+		return true;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Account[Account Number: " + accountNumber +"\nBalance: "+ balance + "\nUser info: "+ user +"\nUserID: "+ userID +"]";
+		return "Account [accountNumber=" + accountNumber + ", approvalStatus=" + approvalStatus + ", balance=" + balance
+				+ ", user=" + user + "]";
 	}
+
+
+	
+
+	
 
 }
