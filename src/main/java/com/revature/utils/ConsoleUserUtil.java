@@ -1,5 +1,6 @@
 package com.revature.utils;
 
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -116,7 +117,13 @@ public class ConsoleUserUtil {
 				+ "[4] Close Application");
 				
 		String action = scan.nextLine();
-		int actionInt = Integer.parseInt(action);
+		int actionInt=0;
+		try {
+			actionInt= Integer.parseInt(action);
+		}catch(NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			makeTransactionEmployee();
+		}
 		if (actionInt==1) {
 			System.out.println("Employee wants to view customer info");
 			viewUserInfo();
@@ -134,27 +141,54 @@ public class ConsoleUserUtil {
 			as.updateAccount(a);
 		}else if (actionInt==4) {
 			closeApp();
+		}else {
+			System.out.println("Enter a valid number. Try Again!");
 		}
 		makeTransactionEmployee();
 		
 	}
 
 	private void viewAccountInfo() {
+		label: {
 		System.out.println("Enter account number of the account you would like to view: ");
-		int accountNumber= scan.nextInt();
-		scan.nextLine();
+		String accountNumberScan= scan.nextLine();
+		int accountNumber=0;
+			try{
+				accountNumber= Integer.parseInt(accountNumberScan);
+			}catch (NumberFormatException e) {
+				System.out.println("Please enter a numeric value!");
+				viewAccountInfo();
+			}finally {
+			switch (accountNumber) {
+				case 0:
+					break label;
+			}
+		}
+		
 		Account a = as.findByAccountNumber(accountNumber);
 		System.out.println(a);
-		
+	}
 	}
 
 	private void viewUserInfo() {
+		label: {
 		System.out.println("Enter user id of the user you would like to view: ");
-		int userID= scan.nextInt();
-		scan.nextLine();
+		String userIdScan= scan.nextLine();
+		int userID=0;
+		try{
+			userID= Integer.parseInt(userIdScan);
+		}catch (NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			viewUserInfo();
+		}finally {
+			switch (userID) {
+				case 0:
+					break label;
+			}
+		}
 		User u = us.findById(userID);
 		System.out.println(u);
-		
+	}
 	}
 
 	private void makeTransactionAdmin() {
@@ -166,7 +200,20 @@ public class ConsoleUserUtil {
 				+ "[5] Close Application");
 				
 		String action = scan.nextLine();
-		int actionInt = Integer.parseInt(action);
+		int actionInt = 0;
+		label: {
+				try {
+					actionInt= Integer.parseInt(action);
+				}catch(NumberFormatException e) {
+					System.out.println("Please enter a numeric value!");
+					makeTransactionAdmin();
+				}
+				finally {
+					switch (actionInt) {
+						case 0:
+							break label;
+					}
+				}
 		if (actionInt==1) {
 			System.out.println("Admin wants to manage account(s)");
 			checkStatus("Admin");
@@ -187,7 +234,7 @@ public class ConsoleUserUtil {
 			closeApp();
 		}
 		makeTransactionAdmin();
-	}
+	}}
 
 	private void editUserInforAsAdmin() {
 		System.out.println("Enter username of the user information you would like to manage: ");
@@ -245,7 +292,19 @@ public class ConsoleUserUtil {
 				+ "[3] Edit personal information\n"
 				+ "[4] Close Application");
 		String action = scan.nextLine();
-		int actionInt = Integer.parseInt(action);
+		int actionInt =0;
+		label:{
+		try {
+			actionInt= Integer.parseInt(action);
+		}catch(NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			makeTrasnsactionCustomer();
+		}finally {
+			switch (actionInt) {
+			case 0:
+				break label;
+		}
+	}
 		if (actionInt==1) {
 			System.out.println("User wants to manage account(s)");
 			checkStatus("Customer");
@@ -261,7 +320,7 @@ public class ConsoleUserUtil {
 		}
 		makeTrasnsactionCustomer();
 		
-
+		}
 	}
 
 	private void checkUserHasAccount(int userId) {
@@ -470,9 +529,22 @@ public class ConsoleUserUtil {
 
 
 	private void transfer(Account a) {
+		label: {
 		System.out.println("What account would you like to transfer amount to? Enter Account Number: ");
 		String account= scan.nextLine(); 
-		int accountNumber = Integer.parseInt(account);
+		int accountNumber=0;
+		try {
+			accountNumber= Integer.parseInt(account);
+		}catch(NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			transfer(a);
+		}finally {
+			switch (accountNumber) {
+			case 0:
+				break label;
+		}
+	}
+		
 		System.out.println("How much would you like to transfer: ");
 		String transferAmount= scan.nextLine(); 
 		double transferAmountDouble = Double.parseDouble(transferAmount);
@@ -489,29 +561,53 @@ public class ConsoleUserUtil {
 		
 		as.updateAccount(otherAccount);
 		as.updateAccount(a);
-	}
+	}}
 
 	private void withdraw(Account a) {
-		System.out.println("How much would you like to withdraw: ");
-		String withdraw= scan.nextLine(); 
-		double withdrawDouble = Double.parseDouble(withdraw);
-		double oldBalance = a.getBalance();
-		a.setBalance(oldBalance-withdrawDouble);
-		as.updateAccount(a);
-		
-		if (ad.updateAccount(a)) {
-			System.out.println("Your account balance has been updated");
-		}else {
-			System.out.println("Something went wrong. Deposit was not complete please try again!");
-			makeTrasnsactionCustomer();
-		}
-		
+		label:{
+			System.out.println("How much would you like to withdraw: ");
+			String withdraw= scan.nextLine(); 
+			double withdrawDouble=0;
+			try{
+				withdrawDouble= Double.parseDouble(withdraw);
+			}catch (NumberFormatException e) {
+				System.out.println("Please enter a numeric value!");
+				withdraw(a);
+			}finally {
+				if(withdrawDouble==0) {
+					break label;
+				}
+			}
+			double oldBalance = a.getBalance();
+			a.setBalance(oldBalance-withdrawDouble);
+			as.updateAccount(a);
+			
+			if (ad.updateAccount(a)) {
+				System.out.println("Your account balance has been updated");
+			}else {
+				System.out.println("Something went wrong. Deposit was not complete please try again!");
+				makeTrasnsactionCustomer();
+			}
+	}
 	}
 
 	private void deposit(Account a) {
+		label: {
 		System.out.println("How much would you like to deposit: ");
 		String deposit= scan.nextLine(); 
-		double depositDouble = Double.parseDouble(deposit);
+		//double depositDouble = Double.parseDouble(deposit);
+		
+		double depositDouble=0;
+		try{
+			depositDouble= Double.parseDouble(deposit);
+		}catch (NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			deposit(a);
+		}finally {
+			if(depositDouble==0) {
+				break label;
+			}
+		}
 		
 		double oldBalance = a.getBalance();
 		a.setBalance(oldBalance+depositDouble);
@@ -525,28 +621,40 @@ public class ConsoleUserUtil {
 		}
 		
 		
-	}
+	}}
 
 	private void createAccountScratch() {
-		
-		User u= createUser();
-		System.out.println("Enter balance you want your Account to start off with: "); 
-		String balance= scan.nextLine(); 
-		double balanceDouble = Double.parseDouble(balance);
-		
-		System.out.println("Your account status will be 'pending' until an Admin approves it");
-		
-		Account a = new Account("Pending", balanceDouble, u);
-		
-		if (as.insertAccount(a)) {
-			System.out.println("Account was added to database ");
-			beginApp();
-		}else {
-			System.out.println("Account not added: Something went wrong please try again");
-			beginApp();
-		}
-		System.out.println("Your account number is: "+ a.getAccountNumber());
-		
+		label:{
+			User u= createUser();
+			System.out.println("Enter balance you want your Account to start off with: "); 
+			String balance= scan.nextLine(); 
+			//double balanceDouble = Double.parseDouble(balance);
+			
+			double balanceDouble=0;
+			try{
+				balanceDouble= Double.parseDouble(balance);
+			}catch (NumberFormatException e) {
+				System.out.println("Please enter a numeric value!");
+				createAccountScratch();
+			}finally {
+				if(balanceDouble==0) {
+					break label;
+				}
+			}
+			
+			System.out.println("Your account status will be 'pending' until an Admin approves it");
+			
+			Account a = new Account("Pending", balanceDouble, u);
+			
+			if (as.insertAccount(a)) {
+				System.out.println("Account was added to database ");
+				beginApp();
+			}else {
+				System.out.println("Account not added: Something went wrong please try again");
+				beginApp();
+			}
+			System.out.println("Your account number is: "+ a.getAccountNumber());
+		}		
 	}
 
 	private void findUser() {
@@ -565,27 +673,38 @@ public class ConsoleUserUtil {
 	}
 
 	private void createAccountAsAdmin() {
-		System.out.println("Enter User information for new account\n"
-				+ "Username: ");
-		String username = scan.nextLine();
-		System.out.println("Confirm Password:");
-		String password = scan.nextLine();
-		User u= ud.findByUserPassword(username, password);
-		
-		System.out.println("Enter balance you want your Account to start off with: "); 
-		String balance= scan.nextLine(); 
-		double balanceDouble = Double.parseDouble(balance);		
-		
-		Account a = new Account("Approved", balanceDouble, u);
-		
-		if (as.insertAccount(a)) {
-			System.out.println("Account was added to database ");
-		}else {
-			System.out.println("Account not added: Something went wrong please try again");
-			beginApp();
-		}
-		System.out.println("User with the username " +u.getUsername()+  " will now have access to account number: "+ a.getAccountNumber());
-		
+		label: {
+			System.out.println("Enter User information for new account\n"
+					+ "Username: ");
+			String username = scan.nextLine();
+			System.out.println("Confirm Password:");
+			String password = scan.nextLine();
+			User u= ud.findByUserPassword(username, password);
+			
+			System.out.println("Enter balance you want your Account to start off with: "); 
+			String balance= scan.nextLine(); 
+			double balanceDouble=0;
+			try{
+				balanceDouble= Double.parseDouble(balance);
+			}catch (NumberFormatException e) {
+				System.out.println("Please enter a numeric value!");
+				createAccountScratch();
+			}finally {
+				if(balanceDouble==0) {
+					break label;
+				}
+			}	
+			
+			Account a = new Account("Approved", balanceDouble, u);
+			
+			if (as.insertAccount(a)) {
+				System.out.println("Account was added to database ");
+			}else {
+				System.out.println("Account not added: Something went wrong please try again");
+				beginApp();
+			}
+			System.out.println("User with the username " +u.getUsername()+  " will now have access to account number: "+ a.getAccountNumber());
+		}		
 	}
 
 	private User createUser() {
