@@ -22,24 +22,33 @@ CREATE TABLE accounts(
 --INSERT 
 INSERT INTO users(user_type, user_fname, user_lname, user_phone, user_username, user_password)
 	VALUES('Admin', 'Elizabeth', 'Jimenez', NULL, 'liz1988', 'wesley');
+
 INSERT INTO users(user_type, user_fname, user_lname, user_phone, user_username, user_password)
 	VALUES('Customer', 'Xavier', 'Jimenez', NULL, 'cash123', 'joey123');
 
-INSERT INTO accounts(account_number, account_status, account_balance, account_user_fk)
-	VALUES();
+INSERT INTO users(user_type, user_fname, user_lname, user_phone, user_username, user_password)
+	VALUES('Employee', 'Lizette', 'Jimenez', '7084201505', 'lizzvj', 'cashjoey');
+
+INSERT INTO accounts(account_status, account_balance, account_user_fk)
+	VALUES('Approved', 78.49, 3);
 -- UPDATE 
-UPDATE * FROM users SET users(user_type= ?, user_fname= ?, user_lname= ?, user_phone= ?, user_username= ?, user_password= ?) 
-	WHERE user_id=?;
+--UPDATE users SET user_type= ?, user_fname= ?, user_lname= ?, user_phone= ?, user_username= ?, user_password= ?
+	--WHERE user_id=?;
 UPDATE accounts SET account_status= 'Approved', account_balance= 40.00 WHERE account_number= 8;
 --SELECT 
+
 --"SELECT * FROM avengers WHERE superhero_id =" +id+";"
-SELECT * FROM users WHERE user_id =;
-SELECT * FROM accounts WHERE account_number =;
+SELECT * FROM users WHERE user_id =4;
+SELECT * FROM accounts WHERE account_number =7;
+SELECT * FROM accounts WHERE account_user_fk =4;
+SELECT * FROM accounts WHERE account_user_fk =5;
+SELECT * FROM accounts WHERE accounts;
+DELETE FROM users WHERE user_fname='Mariela';
 --TRANSACTION
 
-BEGIN; 
+/*BEGIN; 
 INTO users(user_type, user_fname, user_lname, user_phone, user_username, user_password)
 	VALUES (?,?,?,?,?,?);
 INSERT INTO accounts(account_number, account_status, account_balance, account_user_fk)
 	VALUES (?,?,?,?);
-COMMIT;
+COMMIT;*/

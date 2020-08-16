@@ -55,7 +55,7 @@ public class UserDAO implements IUserDAO {
 			
 			if (result.next()) {
 				//(user_type, user_fname, user_lname, user_phone, user_username, user_password)
-				User u = new User(result.getString("user_type"), result.getString("user_fname"),
+				User u = new User(id,result.getString("user_type"), result.getString("user_fname"),
 						result.getString("user_lname"), result.getString("user_phone"),
 						result.getString("user_username"), result.getString("user_password"));
 				return u;
@@ -117,8 +117,8 @@ public class UserDAO implements IUserDAO {
 	@Override
 	public boolean updateUser(User u) {
 		try(Connection conn= ConnectionUtility.getConnection()){
-			String sql = "UPDATE * FROM users SET users(user_type= ?, user_fname= ?,"
-					+ " user_lname= ?, user_phone= ?, user_username= ?, user_password= ?) "
+			String sql = "UPDATE users SET user_type= ?, user_fname= ?,"
+					+ " user_lname= ?, user_phone= ?, user_username= ?, user_password= ? "
 					+ "WHERE user_id=?;";
 			
 			PreparedStatement statement = conn.prepareStatement(sql);
@@ -156,7 +156,8 @@ public class UserDAO implements IUserDAO {
 				u.setId(result.getInt("user_id"));
 				u.setType(result.getString("user_type"));
 				u.setFirst(result.getString("user_fname"));
-				u.setLast(result.getString("user_phone"));
+				u.setLast(result.getString("user_lname"));
+				u.setPhone(result.getString("user_phone"));
 				u.setUsername(result.getString("user_username"));
 				u.setPassword(result.getString("user_password"));
 				return u;
@@ -186,7 +187,8 @@ public class UserDAO implements IUserDAO {
 				u.setId(result.getInt("user_id"));
 				u.setType(result.getString("user_type"));
 				u.setFirst(result.getString("user_fname"));
-				u.setLast(result.getString("user_phone"));
+				u.setLast(result.getString("user_lname"));
+				u.setPhone(result.getString("user_phone"));
 				u.setUsername(result.getString("user_username"));
 				u.setPassword(result.getString("user_password"));
 				

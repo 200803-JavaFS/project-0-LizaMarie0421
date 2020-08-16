@@ -68,3 +68,226 @@
 2020-08-15 09:52:38 INFO  Driver:28 - The application has started
 2020-08-15 09:57:59 INFO  Driver:28 - The application has started
 2020-08-15 09:58:08 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:05:35 INFO  Driver:28 - The application has started
+2020-08-15 10:05:43 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:06:21 INFO  Driver:28 - The application has started
+2020-08-15 10:06:30 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:07:12 INFO  Driver:28 - The application has started
+2020-08-15 10:07:29 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:24:50 INFO  Driver:28 - The application has started
+2020-08-15 10:25:00 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:26:20 INFO  Driver:28 - The application has started
+2020-08-15 10:26:25 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:28:30 INFO  Driver:28 - The application has started
+2020-08-15 10:28:39 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:29:49 INFO  Driver:28 - The application has started
+2020-08-15 10:29:57 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 10:30:57 INFO  Driver:28 - The application has started
+2020-08-15 10:31:10 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 13:45:45 INFO  Driver:28 - The application has started
+2020-08-15 13:46:02 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 13:49:48 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 13:49:48 INFO  Driver:28 - The application has started
+2020-08-15 13:53:03 INFO  Driver:28 - The application has started
+2020-08-15 13:53:33 INFO  Driver:28 - The application has started
+2020-08-15 13:53:44 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 13:54:35 INFO  Driver:28 - The application has started
+2020-08-15 13:54:41 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 13:55:25 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 13:55:26 INFO  Driver:28 - The application has started
+2020-08-15 14:01:53 INFO  Driver:28 - The application has started
+2020-08-15 14:02:04 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 14:03:43 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 14:04:56 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 14:09:23 INFO  Driver:28 - The application has started
+2020-08-15 14:09:38 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 14:11:20 INFO  Driver:28 - The application has started
+2020-08-15 14:11:34 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 14:12:11 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 14:12:25 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 14:13:02 INFO  AccountServices:52 - Updating Account: Account [accountNumber=7, approvalStatus=Approved, balance=6500.0, user=User [id=0, type=Customer, first=Kassandra, last=Rodriguez, phone=7082531234, username=kc2009, password=bestie]]
+2020-08-15 14:16:37 INFO  Driver:28 - The application has started
+2020-08-15 14:16:49 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:17:29 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:19:57 INFO  Driver:28 - The application has started
+2020-08-15 14:20:18 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:20:30 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:21:10 INFO  AccountServices:30 - Finding Account with Account Number 8
+2020-08-15 14:27:16 INFO  Driver:28 - The application has started
+2020-08-15 14:27:28 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:27:36 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:27:37 INFO  Driver:28 - The application has started
+2020-08-15 14:29:21 INFO  Driver:28 - The application has started
+2020-08-15 14:29:31 INFO  Driver:28 - The application has started
+2020-08-15 14:29:51 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:29:55 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:30:17 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:31:47 INFO  Driver:28 - The application has started
+2020-08-15 14:31:55 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:33:13 INFO  Driver:28 - The application has started
+2020-08-15 14:33:21 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 14:33:33 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 14:33:33 INFO  AccountServices:52 - Updating Account: Account [accountNumber=9, approvalStatus=Closed, balance=70.88, user=User [id=0, type=Customer, first=Kassandra, last=Rodriguez, phone=7082531234, username=kc2009, password=bestie]]
+2020-08-15 14:34:24 INFO  Driver:28 - The application has started
+2020-08-15 14:34:50 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 15:08:41 INFO  Driver:29 - The application has started
+2020-08-15 15:08:51 INFO  Driver:29 - The application has started
+2020-08-15 15:09:00 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 15:09:00 INFO  AccountServices:34 - Retrieving all accounts tied to user nodzz with user_id 5
+2020-08-15 15:11:07 INFO  Driver:29 - The application has started
+2020-08-15 15:11:07 INFO  Driver:29 - The application has started
+2020-08-15 15:11:37 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 15:11:37 INFO  AccountServices:34 - Retrieving all accounts tied to user nodzz with user_id=5
+2020-08-15 15:16:56 INFO  Driver:29 - The application has started
+2020-08-15 15:17:08 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 15:17:08 INFO  AccountServices:34 - Retrieving all accounts tied to user nodzz with user_id=5
+2020-08-15 15:19:40 INFO  Driver:29 - The application has started
+2020-08-15 15:19:47 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 15:19:47 INFO  AccountServices:34 - Retrieving all accounts tied to user nodzz with user_id=5
+2020-08-15 15:19:48 INFO  Driver:29 - The application has started
+2020-08-15 15:20:51 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 15:20:51 INFO  AccountServices:34 - Retrieving all accounts tied to user kc2009 with user_id=4
+2020-08-15 15:20:52 INFO  Driver:29 - The application has started
+2020-08-15 15:21:06 INFO  Driver:29 - The application has started
+2020-08-15 15:21:14 INFO  AccountServices:37 - Finding User with username: kc 2009 and password: pass
+2020-08-15 15:21:14 INFO  Driver:29 - The application has started
+2020-08-15 15:21:40 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 15:21:40 INFO  AccountServices:34 - Retrieving all accounts tied to user kc2009 with user_id=4
+2020-08-15 15:21:41 INFO  Driver:29 - The application has started
+2020-08-15 15:25:15 INFO  Driver:29 - The application has started
+2020-08-15 15:25:26 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 15:25:27 INFO  AccountServices:34 - Retrieving all accounts tied to user kc2009 with user_id=4
+2020-08-15 15:25:27 INFO  Driver:29 - The application has started
+2020-08-15 16:28:16 INFO  Driver:29 - The application has started
+2020-08-15 16:28:53 INFO  Driver:29 - The application has started
+2020-08-15 16:29:03 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 16:29:04 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 16:29:04 INFO  Driver:29 - The application has started
+2020-08-15 16:40:51 INFO  Driver:29 - The application has started
+2020-08-15 16:40:59 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 16:41:00 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 16:41:00 INFO  Driver:29 - The application has started
+2020-08-15 16:41:55 INFO  Driver:29 - The application has started
+2020-08-15 16:42:36 INFO  Driver:29 - The application has started
+2020-08-15 16:56:26 INFO  Driver:29 - The application has started
+2020-08-15 16:56:27 INFO  Driver:29 - The application has started
+2020-08-15 16:56:40 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 16:56:40 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 16:56:41 INFO  Driver:29 - The application has started
+2020-08-15 17:01:35 INFO  Driver:29 - The application has started
+2020-08-15 17:01:44 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 17:01:44 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 17:02:18 INFO  Driver:29 - The application has started
+2020-08-15 17:02:30 INFO  AccountServices:37 - Finding User with username: nodzz and password: slagvalley
+2020-08-15 17:02:31 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=5
+2020-08-15 17:02:31 INFO  Driver:29 - The application has started
+2020-08-15 18:08:05 INFO  Driver:29 - The application has started
+2020-08-15 18:08:13 INFO  Driver:29 - The application has started
+2020-08-15 18:12:40 INFO  Driver:29 - The application has started
+2020-08-15 18:13:17 INFO  Driver:29 - The application has started
+2020-08-15 18:13:42 INFO  Driver:29 - The application has started
+2020-08-15 18:14:28 INFO  Driver:29 - The application has started
+2020-08-15 18:15:03 INFO  Driver:29 - The application has started
+2020-08-15 18:15:30 INFO  Driver:29 - The application has started
+2020-08-15 18:16:00 INFO  Driver:29 - The application has started
+2020-08-15 18:16:28 INFO  AccountServices:37 - Finding User with username: MariD and password: bbgurl
+2020-08-15 18:16:28 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=11
+2020-08-15 18:19:11 INFO  AccountServices:30 - Finding Account with Account Number 11
+2020-08-15 18:19:12 INFO  Driver:29 - The application has started
+2020-08-15 18:19:37 INFO  AccountServices:37 - Finding User with username: MariD and password: bbgurl
+2020-08-15 18:19:37 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=11
+2020-08-15 18:23:42 INFO  Driver:29 - The application has started
+2020-08-15 18:24:17 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:24:18 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:27:17 INFO  Driver:29 - The application has started
+2020-08-15 18:27:32 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:27:32 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:27:49 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 18:27:50 INFO  Driver:29 - The application has started
+2020-08-15 18:28:05 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:28:05 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:28:27 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 18:35:07 INFO  Driver:29 - The application has started
+2020-08-15 18:35:18 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bbgurl
+2020-08-15 18:35:18 INFO  Driver:29 - The application has started
+2020-08-15 18:35:40 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:35:41 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:35:58 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 18:36:25 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 18:36:59 INFO  AccountServices:30 - Finding Account with Account Number 9
+2020-08-15 18:38:58 INFO  Driver:29 - The application has started
+2020-08-15 18:39:42 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:39:42 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:42:04 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 18:42:13 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 18:42:39 INFO  Driver:29 - The application has started
+2020-08-15 18:42:51 INFO  Driver:29 - The application has started
+2020-08-15 18:43:10 INFO  Driver:29 - The application has started
+2020-08-15 18:43:22 INFO  AccountServices:37 - Finding User with username: kc2009 and password: bestie
+2020-08-15 18:43:22 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=4
+2020-08-15 18:43:38 INFO  AccountServices:30 - Finding Account with Account Number 13
+2020-08-15 18:43:39 INFO  Driver:29 - The application has started
+2020-08-15 18:43:52 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 18:44:13 INFO  AccountServices:30 - Finding Account with Account Number 13
+2020-08-15 18:44:26 INFO  AccountServices:30 - Finding Account with Account Number 13
+2020-08-15 18:54:51 INFO  Driver:29 - The application has started
+2020-08-15 18:55:16 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 18:55:29 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 19:01:09 INFO  Driver:29 - The application has started
+2020-08-15 19:01:18 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 21:58:17 INFO  Driver:29 - The application has started
+2020-08-15 21:58:29 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 21:59:50 INFO  Driver:29 - The application has started
+2020-08-15 22:00:02 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 22:01:05 INFO  Driver:29 - The application has started
+2020-08-15 22:01:12 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 22:02:05 INFO  Driver:29 - The application has started
+2020-08-15 22:02:05 INFO  Driver:29 - The application has started
+2020-08-15 22:02:13 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 22:07:23 INFO  AccountServices:30 - Finding Account with Account Number 14
+2020-08-15 22:07:32 INFO  AccountServices:30 - Finding Account with Account Number 14
+2020-08-15 22:08:31 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 22:08:32 INFO  AccountServices:57 - Updating Account: Account [accountNumber=12, approvalStatus=Approved, balance=900.0, user=User [id=0, type=Customer, first=Mariela, last=Diaz, phone=null, username=MariD, password=bbgurl]]
+2020-08-15 22:08:32 INFO  AccountServices:57 - Updating Account: Account [accountNumber=14, approvalStatus=Approved, balance=500.78, user=User [id=0, type=Customer, first=Mariela, last=Diaz, phone=null, username=MariD, password=bbgurl]]
+2020-08-15 22:12:14 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 22:12:18 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 22:12:28 INFO  AccountServices:57 - Updating Account: Account [accountNumber=12, approvalStatus=Approved, balance=800.0, user=User [id=0, type=Customer, first=Mariela, last=Diaz, phone=null, username=MariD, password=bbgurl]]
+2020-08-15 22:27:39 INFO  Driver:29 - The application has started
+2020-08-15 22:27:49 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 22:29:58 INFO  Driver:29 - The application has started
+2020-08-15 22:30:08 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:02:12 INFO  Driver:29 - The application has started
+2020-08-15 23:02:25 INFO  AccountServices:37 - Finding User with username: lizzvj1988 and password: j
+2020-08-15 23:02:26 INFO  Driver:29 - The application has started
+2020-08-15 23:02:35 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:03:06 INFO  AccountServices:29 - Finding User with id 11
+2020-08-15 23:03:25 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 23:04:24 INFO  Driver:29 - The application has started
+2020-08-15 23:04:41 INFO  Driver:29 - The application has started
+2020-08-15 23:05:02 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:05:13 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 23:05:42 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 23:11:12 INFO  Driver:29 - The application has started
+2020-08-15 23:11:21 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:11:40 INFO  Driver:29 - The application has started
+2020-08-15 23:11:49 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-15 23:12:35 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 23:12:45 INFO  AccountServices:30 - Finding Account with Account Number 12
+2020-08-15 23:15:51 INFO  Driver:29 - The application has started
+2020-08-15 23:16:00 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:16:07 INFO  AccountServices:29 - Finding User with id 4
+2020-08-15 23:16:48 INFO  AccountServices:30 - Finding Account with Account Number 7
+2020-08-15 23:16:57 INFO  AccountServices:29 - Finding User with id 4
+2020-08-15 23:17:04 INFO  AccountServices:29 - Finding User with id 1
+2020-08-15 23:17:11 INFO  AccountServices:29 - Finding User with id 2
+2020-08-15 23:19:10 INFO  Driver:29 - The application has started
+2020-08-15 23:19:23 INFO  AccountServices:37 - Finding User with username: lizzvj and password: cashjoey
+2020-08-15 23:19:27 INFO  AccountServices:29 - Finding User with id 2
+2020-08-15 23:19:31 INFO  AccountServices:29 - Finding User with id 4
+2020-08-15 23:23:42 INFO  Driver:29 - The application has started
+2020-08-15 23:43:33 INFO  Driver:29 - The application has started
+2020-08-15 23:43:46 INFO  Driver:29 - The application has started
+2020-08-15 23:45:24 INFO  Driver:29 - The application has started
+2020-08-15 23:45:29 INFO  Driver:29 - The application has started
+2020-08-15 23:45:34 INFO  Driver:29 - The application has started
+2020-08-15 23:45:36 INFO  Driver:29 - The application has started

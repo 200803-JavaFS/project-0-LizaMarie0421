@@ -114,7 +114,7 @@ public class Account {
 	@Override
 	public String toString() {
 		return "Account [accountNumber=" + accountNumber + ", approvalStatus=" + approvalStatus + ", balance=" + balance
-				+ ", user=" + user + "]";
+				+ ", username tied to account=" + user.getUsername()+ "]";
 	}
 
 

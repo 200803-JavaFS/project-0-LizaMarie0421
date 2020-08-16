@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import com.revature.models.Account;
@@ -66,7 +67,28 @@ public class AccountDAO implements IAccountDAO {
 		}
 		return null;
 	}
-
+	@Override
+	public List<Account> findByUserId(int userId) {
+		try(Connection conn= ConnectionUtility.getConnection()){
+			String sql = "SELECT * FROM accounts WHERE account_user_fk =" +userId+";";
+			Statement statement = conn.createStatement();
+			List<Account> list = new ArrayList<>();
+			ResultSet result = statement.executeQuery(sql);
+						
+			while (result.next()){
+				//(account_number, account_status, account_balance, account_user_fk)
+				Account a = new Account(result.getInt("account_number"),result.getString("account_status"), 
+						result.getDouble("account_balance"),uDAO.findById(userId));
+				list.add(a);
+				
+			}
+			return list;
+			
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return Collections.emptyList();
+	}
 	@Override
 	public boolean addAccount(Account a) {
 		try(Connection conn= ConnectionUtility.getConnection()){
@@ -113,4 +135,6 @@ public class AccountDAO implements IAccountDAO {
 		}
 		return false;
 	}
+
+	
 }

@@ -30,6 +30,11 @@ public class AccountServices {
 		log.info("Finding Account with Account Number "+ accountNumber);
 		return adao.findByAccountNumber(accountNumber);
 	}
+	public List<Account> findByUser(int userId) {
+		log.info("Retrieving all accounts tied to user with user_id="+ userId);
+		List<Account> list = adao.findByUserId(userId);
+		return list;
+	}
 
 	public boolean insertAccount(Account a) {
 		if (a.getUser()!=null) {

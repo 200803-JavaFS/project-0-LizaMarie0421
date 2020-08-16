@@ -1,5 +1,6 @@
 package com.revature.utils;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.apache.logging.log4j.LogManager;
@@ -31,15 +32,21 @@ public class ConsoleUserUtil {
 		System.out.println("_________________________________________________________________________");
 		System.out.println("_________________________________________________________________________\n");
 
-		System.out.println("How would you like to start?" + "\n[1]: Log into user account"
-				+ "\n[2]: Create customer acount" + "\n[3]: Close application ");
+		System.out.println("How would you like to start?" + "\n[1]: Log In"
+				+ "\n[2]: Create customer account" + "\n[3]: Close application ");
 		
 		String action = scan.nextLine();
 		actionSwitch(action);		
 	}
 
 	private void actionSwitch(String action) {
-		int actionResult= Integer.parseInt(action);
+		int actionResult=0;
+		try {
+			actionResult= Integer.parseInt(action);
+		}catch(NumberFormatException e) {
+			System.out.println("Please enter a numeric value!");
+			beginApp();
+		}
 		switch (actionResult) {
 		case 1:
 			System.out.println("user wants to log into an existing account");
@@ -90,17 +97,145 @@ public class ConsoleUserUtil {
 		String type = u.getType();
 		System.out.println("User is logging in as a: "+ type);
 		if (type.equals("Customer")) {
+			checkUserHasAccount(u.getId());
+			//checkStatus();
 			makeTrasnsactionCustomer();
 		}
-		else if (type.equals("Employee")) {
-			//makeTransactionEmployee();
-		}
 		else if (type.equals("Admin")) {
-			//makeTransaction Employee();
+			makeTransactionAdmin();
+		}else if (type.equals("Employee")) {
+			makeTransactionEmployee();
 		}
-		else {
-			System.out.println("You did not enter a valid choice. Please try again!");
+	}
+
+	private void makeTransactionEmployee() {
+		System.out.println("What would you like to do? Enter Number and hit 'enter'");
+		System.out.println("[1] View customer information\n"
+				+ "[2] View an existing account\n"
+				+ "[3] Change status of an account\n"
+				+ "[4] Close Application");
+				
+		String action = scan.nextLine();
+		int actionInt = Integer.parseInt(action);
+		if (actionInt==1) {
+			System.out.println("Employee wants to view customer info");
+			viewUserInfo();
+		}else if (actionInt ==2) {
+			System.out.println("Employee wants to view an existing account");
+			viewAccountInfo();
+		}else if (actionInt ==3) {
+			System.out.println("Employee wants to change the status of an account");
+			System.out.println("Enter the Account Number of account: ");
+			int accountNumber= scan.nextInt();
+			scan.nextLine();
+			Account a =as.findByAccountNumber(accountNumber);
+			String status = a.getApprovalStatus();
+			changeStatus(a);
+			as.updateAccount(a);
+		}else if (actionInt==4) {
+			closeApp();
 		}
+		makeTransactionEmployee();
+		
+	}
+
+	private void viewAccountInfo() {
+		System.out.println("Enter account number of the account you would like to view: ");
+		int accountNumber= scan.nextInt();
+		scan.nextLine();
+		Account a = as.findByAccountNumber(accountNumber);
+		System.out.println(a);
+		
+	}
+
+	private void viewUserInfo() {
+		System.out.println("Enter user id of the user you would like to view: ");
+		int userID= scan.nextInt();
+		scan.nextLine();
+		User u = us.findById(userID);
+		System.out.println(u);
+		
+	}
+
+	private void makeTransactionAdmin() {
+		System.out.println("What would you like to do? Enter Number and hit 'enter'");
+		System.out.println("[1] Manage Existing account(s)\n"
+				+ "[2] Create new account\n"
+				+ "[3] Edit Customer information\n"
+				+ "[4] Close an existing account\n"
+				+ "[5] Close Application");
+				
+		String action = scan.nextLine();
+		int actionInt = Integer.parseInt(action);
+		if (actionInt==1) {
+			System.out.println("Admin wants to manage account(s)");
+			checkStatus("Admin");
+			manageAccounts();
+		}else if (actionInt ==2) {
+			System.out.println("Admin wants to add an account");
+			findUser();
+			//createAccount();
+		}else if (actionInt ==3) {
+			System.out.println("Admin wants to edit personal info.");
+			//editUserInfo();
+			editUserInforAsAdmin();
+			makeTransactionAdmin();
+		}else if (actionInt==4) {
+			System.out.println("Admin wants to close an existing account");
+			closeAccount();
+		}else if (actionInt ==5) {
+			closeApp();
+		}
+		makeTransactionAdmin();
+	}
+
+	private void editUserInforAsAdmin() {
+		System.out.println("Enter username of the user information you would like to manage: ");
+		String username = scan.nextLine();
+		
+		User u = ud.findByUsername(username);
+		if(u==null) {
+			System.out.println("User does not exist!");
+			makeTransactionAdmin();
+		}
+		System.out.println("Here is the user information we have for the user with username: "+username+ ": ");
+		System.out.println(u);
+		
+		System.out.println("What information would you like to edit (enter number and hit 'Enter')");
+		System.out.println("[1] Edit First Name\n"
+				+ "[2] Edit Last Name\n"
+				+ "[3] Change or add phone number\n"
+				+ "[4] Change username\n"
+				+ "[5] Change password");
+
+		int answer = scan.nextInt();
+		scan.nextLine();
+		if (answer==1) {
+			changeUserName(u);
+		}else if (answer==2) {
+			changeUserLastName(u);
+		}else if (answer==3) {
+			changeUserPhone(u);
+		}else if (answer==4) {
+			changeUserUsername(u);
+		}else if (answer==5) {
+			changeUserPassword(u);
+		}
+		
+		System.out.println("This is the updated user info:");
+		ud.updateUser(u);
+		System.out.println(u);
+		
+	}
+
+	private void closeAccount() {
+		System.out.println("Enter account number that you would like to close: ");
+		int accountNumber = scan.nextInt();
+		scan.nextLine();
+		Account a= as.findByAccountNumber(accountNumber);
+		a.setApprovalStatus("Closed");
+		as.updateAccount(a);
+		
 	}
 
 	private void makeTrasnsactionCustomer() {
@@ -113,6 +248,7 @@ public class ConsoleUserUtil {
 		int actionInt = Integer.parseInt(action);
 		if (actionInt==1) {
 			System.out.println("User wants to manage account(s)");
+			checkStatus("Customer");
 			manageAccounts();
 		}else if (actionInt ==2) {
 			System.out.println("User wants to create new account");
@@ -121,20 +257,102 @@ public class ConsoleUserUtil {
 			System.out.println("User wants to edit personal info.");
 			editUserInfo();
 		}else if (actionInt ==4) {
-			System.out.println("User wants to close application");
-			System.out.println("Thank you for banking with Revature!!");
+			closeApp();
 		}
+		makeTrasnsactionCustomer();
 		
 
 	}
 
+	private void checkUserHasAccount(int userId) {
+		List<Account> list =as.findByUser(userId);
+		System.out.println("User has " +list.size()+ " account(s)");
+		if (list.isEmpty()) {
+			System.out.println("You have no accounts. Try again!");
+			beginApp();
+		}
+		else {
+			System.out.println("You can manage any of these accounts");
+			for(int i = 0; i < list.size(); i++) {
+	            System.out.println("Account Number: "+ list.get(i).getAccountNumber()+ " with a balance of "+ list.get(i).getBalance() );
+	        }
+		}
+	}
+
+	private void closeApp() {
+		System.out.println("User wants to close application");
+		System.out.println("Thank you for banking with Revature!!");
+		System.exit(0);
+		
+	}
+
 	private void editUserInfo() {
-		System.out.println("Enter username againg: ");
+		System.out.println("Enter username of the user information you would like to manage: ");
 		String username = scan.nextLine();
-		System.out.println("Here is the user information we have for you: ");
+		
 		User u = ud.findByUsername(username);
+		if(u==null) {
+			System.out.println("User does not exist!");
+			manageAccounts();
+		}
+		System.out.println("Here is the user information we have for the user with username: "+username+ ": ");
 		System.out.println(u);
 		
+		System.out.println("What information would you like to edit (enter number and hit 'Enter')");
+		System.out.println("[1] Edit First Name\n"
+				+ "[2] Edit Last Name\n"
+				+ "[3] Change or add phone number\n"
+				+ "[4] Change username\n"
+				+ "[5] Change password");
+
+		int answer = scan.nextInt();
+		scan.nextLine();
+		if (answer==1) {
+			changeUserName(u);
+		}else if (answer==2) {
+			changeUserLastName(u);
+		}else if (answer==3) {
+			changeUserPhone(u);
+		}else if (answer==4) {
+			changeUserUsername(u);
+		}else if (answer==5) {
+			changeUserPassword(u);
+		}
+		
+		System.out.println("This is the new information we have for you:");
+		ud.updateUser(u);
+		System.out.println(u);
+		
+	}
+
+	private void changeUserPassword(User u) {
+		System.out.println("Enter new password: ");
+		String newPassword = scan.nextLine();
+		u.setPassword(newPassword);
+	}
+
+	private void changeUserUsername(User u) {
+		System.out.println("Enter new username: ");
+		String newUserName = scan.nextLine();
+		u.setUsername(newUserName);
+	}
+
+	private void changeUserPhone(User u) {
+		System.out.println("Enter new phone number: ");		
+		String newPhone = scan.nextLine();
+		u.setPhone(newPhone);
+	}
+
+	private void changeUserLastName(User u) {
+		System.out.println("Enter last name you would like to change to: ");	
+		String newName = scan.nextLine();
+		u.setLast(newName);
+	}
+
+	private void changeUserName(User u) {
+		System.out.println("Enter name you would like to change to: ");
+		String newName = scan.nextLine();
+		u.setFirst(newName);
 	}
 
 	private void createAccount() {
@@ -161,7 +379,7 @@ public class ConsoleUserUtil {
 			System.out.println("Account not added: Something went wrong please try again");
 			beginApp();
 		}
-		
+		System.out.println("Your account number is: "+ a.getAccountNumber());
 	}
 
 	private void manageAccounts() {
@@ -174,25 +392,82 @@ public class ConsoleUserUtil {
 		System.out.println("[D] Make a Deposit\n"
 				+ "[W] Make a Withdrawal\n"
 				+ "[T] Make a Transfer\n"
-				+ "[E] Exit ");
+				+ "[B] See current balance\n"
+				+ "[E] Exit ");		
 		String transaction = scan.nextLine();
-		//scan.nextLine();
+		String typeOfUser = a.getUser().getType();
 		if (transaction.toLowerCase().equals("d")) {
-			System.out.println("Customer would like to make a Deposit.");
+			System.out.println(typeOfUser+ " would like to make a Deposit.");
 			deposit(a);
 		} else if (transaction.toLowerCase().equals("w")) {
-			System.out.println("Customer would like to make a Withdrawal");
+			System.out.println(typeOfUser+ " would like to make a Withdrawal");
 			withdraw(a);
 		} else if (transaction.toLowerCase().equals("t")) {
-			System.out.println("Customer would like to make a Transaction");
+			System.out.println(typeOfUser+ " would like to make a Transaction");
 			transfer(a);
-		} else if (transaction.toLowerCase().equals("e")){
+		}else if (transaction.toLowerCase().equals("b")) {
+			System.out.println(typeOfUser+ " would like to see current balance");
+			System.out.println("Current balance of account "+ accountNumber+ " is "+ a.getBalance());
+		}else if (transaction.toLowerCase().equals("e")){
 			System.out.println("exit...");
 		}else {
 			System.out.println("You did not enter a valid choice. Please try again!");
+			manageAccounts();
 		}
-		makeTrasnsactionCustomer();
+		
 	}
+
+	private void changeStatus(Account a) {
+		String status = a.getApprovalStatus();
+		System.out.println("Would you like to [A] Approve account or [D] Deny account");
+		String newStatus= scan.nextLine();
+		if (newStatus.toLowerCase().equals("a")) {
+			a.setApprovalStatus("Approved");
+		}else if (newStatus.toLowerCase().equals("d")) {
+			a.setApprovalStatus("Denied");
+		}
+		
+		
+	}
+
+	private void checkStatus(String type) {
+		System.out.println("Let's Confirm the status of the account. Enter Account Number: ");
+		int accountNumber= scan.nextInt();
+		scan.nextLine();
+		Account a =as.findByAccountNumber(accountNumber);
+		String status = a.getApprovalStatus();
+		
+		System.out.println("Account Status for account "+ a.getAccountNumber()+ " is " + status);
+		
+		if (a.getApprovalStatus().equals("Pending")&& type.equals("Customer")) {
+			System.out.println("Account status is pending please wait til your account is approved");
+			beginApp();
+		}else if (a.getApprovalStatus().equals("Pending")&& (type.equals("Admin") || type.equals("Employee"))) {
+			System.out.println("Status of account needs to change before you can manage it");
+			System.out.println("Would you like to change status of account?");
+			String answer = scan.nextLine();
+			if (answer.toLowerCase().equals("yes")) {
+				changeStatus(a);
+				ad.updateAccount(a);
+				makeTransactionAdmin();
+			}else {
+				makeTransactionAdmin();
+			}
+		}else if (a.getApprovalStatus().equals("Closed")) {
+			System.out.println("Cannot manage a closed account. Please try again");
+			beginApp();
+		}else if (a.getApprovalStatus().equals("Denied")) {
+			System.out.println("Account was denied. Sorry, try again");
+			if(type.equals("Admin")){
+				makeTransactionAdmin();
+			}else if (type.equals("Employee")) {
+				makeTransactionEmployee();
+			}else {
+				makeTrasnsactionCustomer();
+			}
+		}
+	}
+
 
 	private void transfer(Account a) {
 		System.out.println("What account would you like to transfer amount to? Enter Account Number: ");
@@ -212,6 +487,8 @@ public class ConsoleUserUtil {
 		double newAccountBalance2 = ogAccountBalance2 - transferAmountDouble;
 		a.setBalance(newAccountBalance2);
 		
+		as.updateAccount(otherAccount);
+		as.updateAccount(a);
 	}
 
 	private void withdraw(Account a) {
@@ -259,8 +536,6 @@ public class ConsoleUserUtil {
 		
 		System.out.println("Your account status will be 'pending' until an Admin approves it");
 		
-		
-		
 		Account a = new Account("Pending", balanceDouble, u);
 		
 		if (as.insertAccount(a)) {
@@ -270,29 +545,54 @@ public class ConsoleUserUtil {
 			System.out.println("Account not added: Something went wrong please try again");
 			beginApp();
 		}
+		System.out.println("Your account number is: "+ a.getAccountNumber());
 		
 	}
 
-	private User findUser() {
-		System.out.println("Does your User already exist already exist in database?\n"
-				+ "if so, enter name of the username. \n"
-				+ "if not enter 'no'");
+	private void findUser() {
+		System.out.println("Does your User already exist already exist in database? yes or no");
 		String response = scan.nextLine();
 		
-		User u = null;
-		if (response.toLowerCase().equals("no")) {
-			u = createUser();
+		if (response.toLowerCase().equals("yes")) {
+			createAccountAsAdmin();
+			
+		}else if(response.toLowerCase().equals("no")) {
+			createAccountScratch();
+			
 		}else {
-			u= ud.findByUsername(response);
+			makeTransactionAdmin();
 		}
-		return u;
+	}
+
+	private void createAccountAsAdmin() {
+		System.out.println("Enter User information for new account\n"
+				+ "Username: ");
+		String username = scan.nextLine();
+		System.out.println("Confirm Password:");
+		String password = scan.nextLine();
+		User u= ud.findByUserPassword(username, password);
+		
+		System.out.println("Enter balance you want your Account to start off with: "); 
+		String balance= scan.nextLine(); 
+		double balanceDouble = Double.parseDouble(balance);		
+		
+		Account a = new Account("Approved", balanceDouble, u);
+		
+		if (as.insertAccount(a)) {
+			System.out.println("Account was added to database ");
+		}else {
+			System.out.println("Account not added: Something went wrong please try again");
+			beginApp();
+		}
+		System.out.println("User with the username " +u.getUsername()+  " will now have access to account number: "+ a.getAccountNumber());
+		
 	}
 
 	private User createUser() {
 		System.out.println("Please enter in necessary information");
 		System.out.println("Name (first, last): ");
 		String name[] = scan.nextLine().split(" ");
-		System.out.println("size of array name: "+ name.length); 
+		
 		String first= name[0];
 		String last= name[1];
 		
@@ -306,7 +606,7 @@ public class ConsoleUserUtil {
 		}
 		else {
 			System.out.println("User does not want to enter phone number");
-			phoneNumber = "0";
+			phoneNumber = null;
 		}
 		System.out.println("Set up a username: ");
 		String username = scan.nextLine();
