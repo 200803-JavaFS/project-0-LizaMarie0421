@@ -37,6 +37,7 @@ public class AccountServices {
 	}
 
 	public boolean insertAccount(Account a) {
+		log.info("Inserting account: "+ a);
 		if (a.getUser()!=null) {
 			List<User> list = udao.findAll(); 
 			boolean b = false;
@@ -59,5 +60,36 @@ public class AccountServices {
 			return true;
 		}
 		return false;
+	}
+	
+	public void transfer(Account a, Account b, double amount) {
+		//get the balance of the account you want to transfer to and increase it 
+		double ogOtherAccountBalance = b.getBalance();
+		double newOtherAccountBalance = ogOtherAccountBalance + amount;
+		
+		
+		
+		//get balance of account that you are withdrawing from to transfer
+		double ogAccountBalance = a.getBalance();
+		double newAccountBalance = ogAccountBalance- amount;
+		
+		
+		
+		b.setBalance(newOtherAccountBalance);
+		a.setBalance(newAccountBalance);
+		updateAccount(b);
+		updateAccount(a);
+	}
+	
+	public void deposit(Account a, double amount) {
+		double oldBalance = a.getBalance();
+		a.setBalance(oldBalance+amount);
+		updateAccount(a);
+	}
+	
+	public void withdraw(Account a, double amount) {
+		double oldBalance = a.getBalance();
+		a.setBalance(oldBalance-amount);
+		updateAccount(a);
 	}
 }

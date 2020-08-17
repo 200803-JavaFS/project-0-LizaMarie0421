@@ -36,6 +36,7 @@ public class AccountDAO implements IAccountDAO {
 				list.add(a);
 				
 			}
+			return list;
 			
 			
 		} catch(SQLException e) {
@@ -135,6 +136,7 @@ public class AccountDAO implements IAccountDAO {
 		}
 		return false;
 	}
-
+	
+	
 	
 }

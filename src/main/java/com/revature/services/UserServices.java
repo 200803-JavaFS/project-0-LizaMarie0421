@@ -39,6 +39,7 @@ public class UserServices {
 	}
 
 	public boolean insertUser(User u) {
+		log.info("Inserting User: "+ u);
 		if (udao.addUser(u)) {
 			return true;
 		}

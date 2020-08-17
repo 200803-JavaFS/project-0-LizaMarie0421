@@ -26,6 +26,7 @@ public class UserDAO implements IUserDAO {
 				User u = new User();
 				//structure: h.setHomeBase(result.getString("home_base"));
 				//(user_type, user_fname, user_lname, user_phone, user_username, user_password)
+				u.setId(result.getInt("user_id"));
 				u.setType(result.getString("user_type"));
 				u.setFirst(result.getString("user_fname"));
 				u.setLast(result.getString("user_lname"));
