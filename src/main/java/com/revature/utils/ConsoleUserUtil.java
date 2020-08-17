@@ -249,6 +249,7 @@ public class ConsoleUserUtil {
 			makeTransactionAdmin();
 		}else if (actionInt==4) {
 			System.out.println("Admin wants to close an existing account");
+			displayAccounts();
 			closeAccount();
 		}else if (actionInt ==5) {
 			closeApp();

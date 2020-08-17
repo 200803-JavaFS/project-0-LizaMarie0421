@@ -642,3 +642,7 @@
 2020-08-17 16:27:09 INFO  Driver:30 - The application has started
 2020-08-17 16:27:22 INFO  AccountServices:37 - Finding User with username: eddie and password: roddie
 2020-08-17 16:27:22 INFO  AccountServices:34 - Retrieving all accounts tied to user with user_id=21
+2020-08-17 16:35:26 INFO  Driver:30 - The application has started
+2020-08-17 16:35:40 INFO  AccountServices:37 - Finding User with username: liz1988 and password: wesley
+2020-08-17 16:35:45 INFO  AccountServices:22 - Retrieving all accounts
+2020-08-17 16:36:04 INFO  AccountServices:30 - Finding Account with Account Number 32
